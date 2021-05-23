@@ -3,7 +3,7 @@ const app = express();
 const PORT = 3000;
 const bodyParser = require("body-parser");
 
-
+app.set("view engine", "ejs");
 app.use(bodyParser.json());
 app.listen(PORT,()=>{
     console.log("Sample Node project is running at http://localhost:"+PORT);
@@ -34,4 +34,11 @@ app.post("/dataParams/:name/:age",(req,res)=>{
 })
 app.post("/dataQuery",(req,res)=>{
     res.send(req.query);
+})
+app.get("/sample",(req,res)=>{
+    res.render("sample");
+})
+
+app.get("/dynamic",(req,res)=>{
+    res.render("dynamic",{message:"Welcome to Dynamic Ejs"});
 })
