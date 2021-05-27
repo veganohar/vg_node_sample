@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 
 app.set("view engine", "ejs");
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
 app.listen(PORT,()=>{
     console.log("Sample Node project is running at http://localhost:"+PORT);
 })
@@ -41,4 +42,12 @@ app.get("/sample",(req,res)=>{
 
 app.get("/dynamic",(req,res)=>{
     res.render("dynamic",{message:"Welcome to Dynamic Ejs"});
+})
+
+app.get("/form",(req,res)=>{
+    res.render("form");
+})
+
+app.post("/result",(req,res)=>{
+    res.render("result",req.body);
 })
