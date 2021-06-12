@@ -30,3 +30,4 @@ db.mongoose.connect(`mongodb://${dbconfig.HOST}:${dbconfig.PORT}/${dbconfig.DB}`
   })
 
 require("./app/routes/test.route")(app);
+require("./app/routes/employee.route")(app);;
