@@ -7,7 +7,7 @@ const Employee = mongoose.model(
         phone:Number,
         city:String,
         age:Number,
-        sallary:Number,
+        salary:Number,
         createdOn:{
             type:Date,
             default: Date.now
